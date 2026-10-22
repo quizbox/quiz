@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1027">
+<title>Quiz — учебный квест</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1027;--panel:#192347;--panel2:#202c58;--text:#f8fbff;--sub:#bbc9eb;--line:#40517b;--violet:#9b86ff;--gold:#ffd65a;--mint:#72ebbb;--bad:#ff8b9e;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+*{box-sizing:border-box}html,body{min-height:100%}body{margin:0;background:radial-gradient(ellipse at 12% -8%,#334388 0%,transparent 45%),radial-gradient(ellipse at 95% 90%,#2d2465 0%,transparent 40%),var(--bg);color:var(--text);padding:24px 13px 60px}button{font:inherit;cursor:pointer;touch-action:manipulation}button:focus-visible,a:focus-visible{outline:3px solid #fff;outline-offset:3px}a{color:#a9d5ff}.wrap{max-width:750px;margin:0 auto}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 1px 23px}.brand{display:flex;align-items:center;gap:9px;font-size:12px;text-transform:uppercase;letter-spacing:.13em;color:#b9c8f7;font-weight:900}.logo{display:grid;place-items:center;width:36px;height:36px;border-radius:11px;background:#775eee;font-size:20px;box-shadow:0 4px 18px #725ced66}.version{color:#98abd5;font-size:12px;font-weight:650}.card{position:relative;overflow:hidden;background:linear-gradient(165deg,#202c56,#151e3c);border:1px solid #394870;border-radius:25px;padding:clamp(22px,4vw,39px);box-shadow:0 26px 68px #0007}.hidden{display:none!important}.eyebrow{font-weight:900;letter-spacing:.1em;text-transform:uppercase;font-size:12px;color:#b3a2ff}.intro-emoji{font-size:46px;margin:12px 0}.headline{font-size:clamp(30px,6.5vw,50px);line-height:1.12;letter-spacing:-.05em;margin:12px 0 17px}.lead{color:var(--sub);font-size:16px;line-height:1.62;margin:0 0 20px}.pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}.pill{border:1px solid #52648c;background:#263561;color:#dfe8ff;padding:8px 12px;border-radius:99px;font-size:13px;font-weight:700}.action{background:linear-gradient(120deg,#e4ccff,#a9a2ff);border:0;border-radius:15px;padding:15px 22px;min-height:52px;color:#1c1745;font-weight:900;box-shadow:0 7px 20px #7664de55}.action:hover{filter:brightness(1.07)}.action:active{transform:translateY(1px)}.action:disabled{opacity:.5;cursor:default}.minor{border:1px solid #6576a2;background:#26365f;color:#fff;border-radius:13px;min-height:48px;padding:12px 18px;font-weight:750}.bar{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:14px}.scorechip{display:flex;align-items:center;gap:7px;padding:10px 12px;background:#101a38;border:1px solid #46577f;border-radius:13px;font-size:14px;font-weight:850}.coin{color:var(--gold)}.combo{color:var(--mint)}.small{color:#aebde1;font-size:13px}.progresscaption{display:flex;justify-content:space-between;color:#c7d4f5;font-size:13px;font-weight:800;margin:19px 0 8px}.progress{height:11px;background:#101a34;border:1px solid #3d4c74;overflow:hidden;border-radius:20px}.progress div{height:100%;background:linear-gradient(90deg,#78d6f3,#a588ff);transition:width .3s}.question{margin:28px 0 24px;font-size:clamp(21px,4.9vw,29px);font-weight:850;line-height:1.3;letter-spacing:-.025em}.answers{display:grid;gap:11px}.answer{display:flex;text-align:left;align-items:center;gap:13px;min-height:64px;border:1.5px solid #53658e;color:white;background:linear-gradient(100deg,#273662,#22305a);border-radius:15px;padding:12px 14px;line-height:1.42}.answer:hover:not(:disabled){background:#374d85;border-color:#afa1ff}.answer:disabled{cursor:default}.answer strong{display:grid;place-items:center;flex:none;width:34px;height:34px;background:#43558a;border-radius:10px;color:#f8f9ff;font-size:14px}.answer.correct{border-color:#69e6ae;background:#174e48}.answer.correct strong{background:#2d8c70}.answer.wrong{border-color:#fe829d;background:#65364f}.answer.wrong strong{background:#9d4968}.explanation{border:1px solid #6276a2;background:#182649;border-radius:15px;margin-top:17px;padding:15px 17px;line-height:1.55;color:#e0e9ff}.explanation .notice-head{font-weight:950;font-size:19px;display:block;margin-bottom:5px;color:white}.reward{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:7px;color:var(--gold);font-size:14px;font-weight:850}.reward-pop{animation:jump .42s ease-out}@keyframes jump{0%{transform:scale(.65);opacity:0}65%{transform:scale(1.15)}100%{transform:scale(1);opacity:1}}.bottom{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;margin-top:21px}.rewardbox{display:grid;place-items:center;border-radius:20px;background:radial-gradient(circle,#4b417e 0%,#252453 60%,#1b2549 100%);margin:21px 0;padding:25px 15px;border:1px solid #6c6b9e}.medal{font-size:70px;line-height:1.1;filter:drop-shadow(0 7px 15px #0005)}.rank{font-size:23px;font-weight:950;margin:12px 0 1px}.stars{font-size:21px;color:var(--gold);letter-spacing:.15em}.resultstats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}.stat{border:1px solid #50628b;background:#19274b;padding:17px 12px;border-radius:15px;text-align:center}.statbig{font-size:30px;letter-spacing:-.03em;font-weight:950}.statlabel{margin-top:3px;color:#bbcae8;font-size:13px}.oral{background:#1b2a4e;padding:16px 19px;border-radius:16px;border:1px solid #4e618a;margin:23px 0}.oral strong{color:#dfd7ff;font-size:16px}.oral p{line-height:1.5;margin:10px 0 0;color:#c5d2ef}.oral ol{padding-left:22px;line-height:1.6;color:#e0e8fa}.oral li{margin:9px 0}.tiny{color:#a8b9d9;font-size:12px;line-height:1.55;margin:22px 4px}.review{border-top:1px solid #53638b;margin-top:24px;padding-top:20px}.review summary{font-weight:800;cursor:pointer}.review li{border-bottom:1px solid #485b7d;padding:12px 4px;line-height:1.5}.review p{color:#c2cfeb;font-size:14px;margin:7px 0}.confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}.confetti i{position:absolute;top:-10%;width:11px;height:15px;border-radius:3px;background:var(--gold);animation:fall 2.5s ease-in forwards;transform:rotate(15deg)}.confetti i:nth-child(3n){background:#7ce8dd}.confetti i:nth-child(4n){background:#b9a1ff}@keyframes fall{to{transform:translate(75px,700px) rotate(900deg);opacity:0}}@media(max-width:500px){body{padding:12px 10px 35px}.top{margin-bottom:12px}.card{border-radius:19px;padding:20px 17px}.bar{gap:6px}.scorechip{font-size:13px;padding:7px 9px}.answer{min-height:62px;padding:11px}.resultstats{gap:9px}.statbig{font-size:26px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.mistakes{margin:22px 0;padding:18px;border:1px solid #697da6;border-radius:16px;background:#1b294b}.mistakes h2{margin:0 0 9px;font-size:21px}.mistakes>p,.mistakes p{color:#c6d5f0;line-height:1.55}.mistakes ol{padding-left:24px;margin:12px 0 0}.mistakes li{padding:12px 0;border-bottom:1px solid #465a83;line-height:1.45}.mistakes li:last-child{border-bottom:0}.mistakes li p{margin:7px 0 0}.retry-status{margin:16px 0;font-size:15px;font-weight:800;color:var(--mint);line-height:1.5}
+
+
+.profile-line{display:flex;flex-wrap:wrap;gap:14px 26px;margin:18px 0;font-weight:700;color:#eef4ff}
+.storage-note{font-size:13px;line-height:1.5;color:#d1e1ff;margin:4px 0 14px}
+.profile-actions{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
+.profile-actions .minor{font-size:14px;padding:10px 13px}
+.file-label{display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.collection{border:1px solid #435b89;border-radius:18px;background:#172343;margin-top:23px;padding:18px}
+.collection>summary{font-size:17px;font-weight:800;cursor:pointer}
+.collection h2{font-size:21px;margin:0 0 9px}
+.collection-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin-top:14px}
+.treasure{height:78px;border:2px solid #445a83;background:#101a34;color:#e8edff;border-radius:12px;display:flex;justify-content:center;align-items:center;flex-direction:column;gap:2px;text-align:center;padding:6px 3px;font:inherit;cursor:default;position:relative}
+.treasure .icon{font-size:27px;line-height:1.2}
+.treasure .caption{font-size:11px;line-height:1.15;color:#c8d7f3}
+.treasure.ready{border-color:#f5ce75;background:#544522;cursor:pointer;box-shadow:0 0 12px #d4a8467a;animation:glow 2s infinite alternate}
+.treasure.revealed{border-color:#5cbd9f;background:#143d3b;cursor:pointer}
+.treasure.active-avatar{outline:2px solid #f4d77b;outline-offset:2px}
+@keyframes glow{from{box-shadow:0 0 4px #f5cb7a55}to{box-shadow:0 0 17px #f5cb7ab8}}
+@media(max-width:450px){.collection-grid{gap:6px}.treasure{height:67px}.treasure .caption{font-size:10px}.treasure .icon{font-size:23px}}
+
+.owned-avatars{margin-top:18px;border-top:1px solid #4e6086;padding-top:14px}.owned-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.active-owned{outline:2px solid #f4d77b}.error-loading{color:#ffb5c3}.loading-state{opacity:.75}
+</style>
+</head><body>
+<main class="wrap">
+<header class="top"><div class="brand"><span class="logo" aria-hidden="true">★</span>КВЕСТ · <span id="brand-topic">Кругозор</span></div><span class="version">Вопросы · награды · повторение</span></header>
+<section class="card" id="intro">
+  <span class="eyebrow">МИССИЯ: ПРОВЕРКА ЗНАНИЙ</span>
+  <div class="intro-emoji" aria-hidden="true">🧠 🪙</div>
+  <h1 id="topic-title" class="headline">Загрузка…</h1>
+  <p id="intro-phrase" class="lead"></p>
+  <div class="pillrow"><span id="topic-count" class="pill"></span><span class="pill">🪙 +1 за верный ответ</span><span class="pill">⚡ +1 за 3 подряд</span><span class="pill">🔀 Каждый раз новый порядок</span><span class="pill">🏆 Награда в финале</span></div>
+  <div class="profile-line"><span>💰 Баланс: <b id="profile-balance">0</b> монет</span><span>🎭 Аватаров: <b id="profile-revealed">0</b> / 12</span></div>
+  <div id="storage-status" class="storage-note" role="status"></div>
+  <div class="bottom" style="justify-content:flex-start"><button type="button" class="action" id="start" disabled>Загружаем вопросы…</button><button type="button" class="minor hidden" id="start-review">Работа над ошибками</button><button type="button" class="minor hidden" id="resume-review">Продолжить повтор</button></div>
+  <p class="storage-note" id="review-info"></p>
+  <details class="collection" id="intro-collection"><summary>🎭 Магазин и мои аватары</summary><p class="small">Покупай аватары за заработанные монеты. Купленные останутся в коллекции, и ты сможешь менять их бесплатно.</p><div class="collection-grid" id="collection-board-intro"></div><p class="small" id="avatar-label-intro"></p><div id="owned-avatars-intro" class="owned-avatars"></div></details>
+  <div class="profile-actions"><button type="button" class="minor" id="download-history">Сохранить прогресс в файл</button><label class="minor file-label">Восстановить из файла<input type="file" id="restore-history" accept="application/json,.json" hidden></label></div>
+</section>
+<section class="card hidden" id="game" aria-label="Игровые вопросы">
+  <span class="eyebrow" id="phase-tag">ОСНОВНОЙ РАУНД</span>
+  <div class="bar" style="margin-top:12px"><span class="scorechip coin">🪙 <span id="coins">0</span></span><span class="scorechip combo">⚡ Серия: <span id="streak">0</span></span><span class="scorechip">✓ <span id="hits">0</span> верных</span></div>
+  <div class="progresscaption"><span id="question-count">Вопрос 1</span><span>Всего: <span id="question-total">15</span></span></div>
+  <div class="progress" role="progressbar" aria-label="Прогресс игры"><div id="fill" style="width:0%"></div></div>
+  <h2 id="question" class="question"></h2>
+  <div id="answers" class="answers"></div>
+  <div id="feedback" class="explanation hidden" role="status" aria-live="polite"></div>
+  <div class="bottom"><button type="button" class="action hidden" id="next">Следующий вопрос →</button></div>
+</section>
+<section class="card hidden" id="result">
+  <div id="confetti" class="confetti" aria-hidden="true"></div>
+  <span class="eyebrow">МИССИЯ ЗАВЕРШЕНА</span>
+  <div class="rewardbox"><div id="medal" class="medal" aria-hidden="true">🏆</div><div class="rank" id="rank"></div><div class="stars" id="stars"></div></div>
+  <p class="lead" id="outcome"></p>
+  <div class="resultstats"><div class="stat"><div id="final-correct" class="statbig">0 / 15</div><div class="statlabel">Верно в первом раунде</div></div><div class="stat"><div class="statbig coin">🪙 <span id="final-coins">0</span></div><div class="statlabel">Заработано монет</div></div></div>
+  <p class="small" id="final-streak"></p>
+  <div class="profile-line"><span>💰 Всего монет: <b id="result-balance">0</b></span><span>🗂️ Раундов пройдено: <b id="result-sessions">0</b></span></div>
+  <section class="collection"><h2>🎭 Магазин и мои аватары</h2><p class="small">Купленные аватары остаются в коллекции. Нажми на них, чтобы выбрать.</p><div class="collection-grid" id="collection-board-result"></div><p class="small" id="avatar-label-result"></p><div id="owned-avatars-result" class="owned-avatars"></div></section>
+  <section id="mistakes-block" class="mistakes hidden"><h2>Разбор ошибок</h2><p>Посмотри, что нужно запомнить, и попробуй ответить ещё раз. Вопросы и ответы поменяют порядок.</p><ol id="mistakes-list"></ol></section>
+  <p class="retry-status" id="retry-status"></p>
+  <div class="bottom" style="justify-content:flex-start"><button type="button" class="action hidden" id="retry">Повторить ошибки →</button></div>
+  <div id="oral-block" class="oral"><strong>🎤 Финальный уровень — устно</strong><p>Ничего печатать не нужно. Объясни взрослому:</p><ol id="oral-list"></ol></div>
+  <div class="bottom" style="justify-content:flex-start"><button type="button" class="action" id="again">На главную ↩</button><button type="button" class="minor" id="copy">Скопировать результат</button><button type="button" class="minor" id="download-history-result">Скачать историю и ошибки</button></div>
+  <details class="review"><summary>Разобрать все вопросы и ответы</summary><ol id="review-list"></ol></details>
+</section>
+<footer class="tiny" id="sources"></footer>
+</main>
+<script>
+/* QuizBox, browser-only learning game. Questions loaded from current.json.
+   The same normalized question object lives in current.json and in errorQueue. */
+(() => {
+'use strict';
+const $ = id => document.getElementById(id);
+const KEY = 'sasha-learning-quest-profile-v1';
+const now = () => new Date().toISOString();
+const today = () => { const d=new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; };
+const prizes = [
+ ['🦉','Сова',3],['🧭','Компас',6],['🦕','Динозавр',10],['🚀','Ракета',15],
+ ['🪐','Сатурн',20],['🗿','Артефакт',26],['🐉','Дракон',33],['🛸','Тарелка',41],
+ ['🔮','Кристалл',50],['🏰','Замок',60],['👑','Корона',72],['🌌','Галактика',85]
+];
+const shape = (raw, id, topicId, topic) => ({
+ id:String(raw.id || id), topicId:String(raw.topicId || topicId), topic:String(raw.topic || topic),
+ question:String(raw.question || raw.q || ''),
+ options:Array.isArray(raw.options) ? raw.options.slice() : [],
+ correctIndex:Number.isInteger(raw.correctIndex)?raw.correctIndex:raw.answer,
+ explanation:String(raw.explanation || raw.why || '')
+});
+const valid = q => q && typeof q.id==='string' && q.id && q.topicId && q.topic && q.question &&
+ Array.isArray(q.options) && q.options.length===4 && q.options.every(x=>typeof x==='string' && x.trim()) &&
+ Number.isInteger(q.correctIndex) && q.correctIndex>=0 && q.correctIndex<4 && q.explanation;
+const freshProfile=()=>({schemaVersion:1,updatedAt:now(),balance:0,totalEarned:0,awards:[],avatar:-1,
+ topics:{},sessions:[],mistakes:{},errorQueue:[],activeReview:null,dailyQuestionCredits:{},dailyBonusCredits:{},lastTopicOrders:{}});
+let storageWorks=false;
+try {localStorage.setItem(KEY+'-check','1');localStorage.removeItem(KEY+'-check');storageWorks=true;}catch(e){}
+let profile=freshProfile();
+try{if(storageWorks){const saved=JSON.parse(localStorage.getItem(KEY)||'null');if(saved && saved.schemaVersion===1 && Array.isArray(saved.sessions) && saved.mistakes) profile={...freshProfile(),...saved};}}catch(e){}
+let content=null,topicId='',title='',questions=[],phase='topic',round=[],index=0,locked=false,shownOptions=[],answerPositionCounts=[0,0,0,0],previousAnswersPos=new Map();
+let streak=0,bestStreak=0,earnedThisRound=0,answers=[],recentWrongIds=[],sessionId='',lastFeedback=null;
+let lastResultAnswers=[],lastResultPhase='topic';
+const rand=n=>Math.floor(Math.random()*n);
+function shuffle(arr){const a=arr.slice();for(let i=a.length-1;i>0;i--){const j=rand(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;}
+function differentShuffle(arr,previous){const s=shuffle(arr);if(s.length>1 && Array.isArray(previous) && s.every((x,i)=>x===previous[i]))s.push(s.shift());return s;}
+function sanitizeProfile(){
+ if(!Array.isArray(profile.awards))profile.awards=[];
+ profile.awards=Array.from(new Set(profile.awards.filter(x=>Number.isInteger(x)&&x>=0&&x<prizes.length)));
+ if(!Number.isSafeInteger(profile.balance)||profile.balance<0)profile.balance=0;
+ if(!Number.isSafeInteger(profile.totalEarned)||profile.totalEarned<0)profile.totalEarned=0;
+ if(!profile.topics || typeof profile.topics!=='object')profile.topics={};
+ if(!profile.lastTopicOrders || typeof profile.lastTopicOrders!=='object')profile.lastTopicOrders={};
+ if(!profile.mistakes || typeof profile.mistakes!=='object')profile.mistakes={};
+ if(!profile.dailyQuestionCredits || typeof profile.dailyQuestionCredits!=='object')profile.dailyQuestionCredits={};
+ if(!profile.dailyBonusCredits || typeof profile.dailyBonusCredits!=='object')profile.dailyBonusCredits={};
+ if(!Array.isArray(profile.sessions))profile.sessions=[];
+ if(!Array.isArray(profile.errorQueue))profile.errorQueue=[];
+ const seen=new Set();
+ profile.errorQueue=profile.errorQueue.map(q=>shape(q,q.id,q.topicId,q.topic)).filter(q=>{if(!valid(q) || seen.has(q.id))return false;seen.add(q.id);return true;});
+ // Migrate old v3/v4 pending mistake records, preserving oldest-first order.
+ const old=Object.values(profile.mistakes).filter(x=>x&&x.pending===true&&!seen.has(x.id)).sort((a,b)=>String(a.lastMistake||'').localeCompare(String(b.lastMistake||'')));
+ for(const row of old){const q=shape(row,row.id,row.topicId,row.topic);if(valid(q)){profile.errorQueue.push(q);seen.add(q.id);}}
+ if(!profile.activeReview || !Array.isArray(profile.activeReview.ids) || !Array.isArray(profile.activeReview.items) || !Array.isArray(profile.activeReview.answers))profile.activeReview=null;
+}
+sanitizeProfile();
+function save(){profile.updatedAt=now();if(storageWorks){try{localStorage.setItem(KEY,JSON.stringify(profile));}catch(e){storageWorks=false;storageStatus();}}}
+function storageStatus(){let str=storageWorks?'Прогресс и очередь ошибок автоматически сохраняются в этом браузере.':'⚠️ Браузер запретил сохранение! Используй кнопку «Сохранить прогресс в файл».';
+ if(location.protocol==='file:')str+=' Для надёжной работы открывай игру по ссылке GitHub Pages.';
+ else str+=' На другом устройстве прогресс пока будет отдельным.';
+ $('storage-status').textContent=str;
+}
+function updateHeader(){
+ $('profile-balance').textContent=profile.balance;
+ $('profile-revealed').textContent=profile.awards.length;
+ $('result-balance').textContent=profile.balance;
+ $('result-sessions').textContent=profile.sessions.length;
+ const has=profile.errorQueue.length>0;
+ $('start-review').classList.toggle('hidden',!has||!!profile.activeReview);
+ $('start-review').textContent=`Работа над ошибками (${Math.min(15,profile.errorQueue.length)})`;
+ $('resume-review').classList.toggle('hidden',!profile.activeReview);
+ $('review-info').textContent=profile.activeReview?
+  `Есть незавершённый повтор: ${profile.activeReview.answers.length} из ${profile.activeReview.ids.length}. Продолжи его.`:
+  `В очереди ошибок: ${profile.errorQueue.length}. Для повторения берём до 15 самых старых вопросов.`;
+ renderShop();
+}
+function shopButton(i){
+ if(profile.awards.includes(i)){profile.avatar=i;save();updateHeader();return;}
+ const price=prizes[i][2];if(profile.balance<price)return;
+ profile.balance-=price;profile.awards.push(i);profile.avatar=i;save();updateHeader();
+ $('intro-collection').open=true;
+}
+function renderShop(){
+ for(const [boardId,captionId,ownedId] of [
+  ['collection-board-intro','avatar-label-intro','owned-avatars-intro'],
+  ['collection-board-result','avatar-label-result','owned-avatars-result']]){
+  const board=$(boardId);board.replaceChildren();
+  prizes.forEach(([emoji,name,price],i)=>{
+   const owned=profile.awards.includes(i),available=profile.balance>=price;
+   const btn=document.createElement('button');btn.type='button';
+   btn.className='treasure '+(owned?'revealed':available?'ready':'locked')+(profile.avatar===i?' active-avatar':'');
+   btn.disabled=!owned&&!available;btn.setAttribute('aria-label',owned?`Выбрать аватар ${name}`:available?`Купить аватар за ${price} монет`:`Недостаточно монет для ${name}`);
+   const pic=document.createElement('span');pic.className='icon';pic.textContent=owned?emoji:available?'🎁':'🔒';
+   const label=document.createElement('span');label.className='caption';label.textContent=owned?(name+(profile.avatar===i?' ✓':' · выбрать')):`${price} 🪙${available?' · купить':''}`;
+   btn.append(pic,label);if(owned||available)btn.addEventListener('click',()=>shopButton(i));board.append(btn);
+  });
+  $(captionId).textContent=profile.avatar>=0 && prizes[profile.avatar]?
+   `Выбран аватар: ${prizes[profile.avatar][0]} ${prizes[profile.avatar][1]}. Можно поменять на другой купленный.`:
+   'Купи первый аватар за монеты, чтобы выбрать его.';
+  const strip=$(ownedId);strip.replaceChildren();const heading=document.createElement('strong');heading.textContent=`МОИ АВАТАРЫ (${profile.awards.length})`;strip.append(heading);
+  if(!profile.awards.length){const p=document.createElement('p');p.className='small';p.textContent='Пока нет купленных аватаров.';strip.append(p);}else{
+   const row=document.createElement('div');row.className='owned-row';for(const i of profile.awards){const btn=document.createElement('button');btn.type='button';btn.className='minor'+(profile.avatar===i?' active-owned':'');btn.textContent=prizes[i][0]+' '+prizes[i][1]+(profile.avatar===i?' ✓':'');btn.addEventListener('click',()=>shopButton(i));row.append(btn);}strip.append(row);
+  }
+ }
+}
+function recordMistake(q){
+ if(!profile.errorQueue.some(x=>x.id===q.id))profile.errorQueue.push({...q});
+ const old=profile.mistakes[q.id]||{};
+ profile.mistakes[q.id]={...old,...q,pending:true,errors:(old.errors||0)+1,lastMistake:now()};save();
+}
+function resolveMistake(q){
+ profile.errorQueue=profile.errorQueue.filter(x=>x.id!==q.id);
+ if(profile.mistakes[q.id])profile.mistakes[q.id]={...profile.mistakes[q.id],pending:false,lastCorrected:now(),corrections:(profile.mistakes[q.id].corrections||0)+1};save();
+}
+function giveQuestionCoin(q){
+ const k=`${today()}|${q.topicId}`,credits=profile.dailyQuestionCredits[k]||[];
+ if(credits.includes(q.id))return 0;profile.dailyQuestionCredits[k]=[...credits,q.id];profile.balance++;profile.totalEarned++;save();return 1;
+}
+function giveComboCoin(streakNumber){
+ const k=`${today()}|${topicId}`,credits=profile.dailyBonusCredits[k]||[];
+ const bonus=Math.floor(streakNumber/3);if(credits.includes(bonus))return 0;
+ profile.dailyBonusCredits[k]=[...credits,bonus];profile.balance++;profile.totalEarned++;save();return 1;
+}
+function view(name){['intro','game','result'].forEach(id=>$(id).classList.toggle('hidden',id!==name));window.scrollTo(0,0);}
+function home(){updateHeader();view('intro');}
+function resetRound(){index=0;locked=false;streak=0;bestStreak=0;earnedThisRound=0;answers=[];answerPositionCounts=[0,0,0,0];previousAnswersPos=new Map();lastFeedback=null;}
+function startTopic(){if(!questions.length)return;phase='topic';resetRound();
+ const last=profile.lastTopicOrders[topicId]||[];round=differentShuffle(questions,last.map(id=>questions.find(q=>q.id===id)).filter(Boolean));
+ profile.lastTopicOrders[topicId]=round.map(q=>q.id);save();
+ recentWrongIds=[];sessionId=`${topicId}:${Date.now()}:${rand(1000000)}`;view('game');renderQuestion();
+}
+function startReview(){if(!profile.errorQueue.length||profile.activeReview)return;
+ const selected=profile.errorQueue.slice(0,15).map(q=>({...q}));
+ profile.activeReview={id:`review:${Date.now()}`,ids:shuffle(selected.map(q=>q.id)),items:selected,answers:[],startedAt:now()};save();resumeReview();
+}
+function resumeReview(){const active=profile.activeReview;if(!active)return;
+ phase='review';resetRound();round=active.ids.map(id=>active.items.find(q=>q.id===id)).filter(Boolean);
+ // Already answered questions persist even after the tab closes.
+ answers=active.answers.map(a=>({...a}));index=answers.length;
+ if(index>=round.length){finishReview();return;}view('game');renderQuestion();
+}
+function retryRecent(){
+ const picked=recentWrongIds.filter(id=>profile.errorQueue.some(q=>q.id===id));if(!picked.length)return;
+ phase='retry';resetRound();round=shuffle(picked.map(id=>profile.errorQueue.find(q=>q.id===id)).filter(Boolean));view('game');renderQuestion();
+}
+function optionOrdering(q){
+ const previous=previousAnswersPos.get(q.id);
+ let candidates=[0,1,2,3];const low=Math.min(...answerPositionCounts);
+ candidates=candidates.filter(p=>answerPositionCounts[p]===low);
+ if(candidates.length>1 && previous!==undefined)candidates=candidates.filter(p=>p!==previous);
+ if(!candidates.length)candidates=[0,1,2,3].filter(p=>p!==previous);
+ const rightPosition=candidates[rand(candidates.length)];answerPositionCounts[rightPosition]++;
+ previousAnswersPos.set(q.id,rightPosition);
+ const other=shuffle([0,1,2,3].filter(x=>x!==q.correctIndex));
+ const positions=[];let k=0;for(let p=0;p<4;p++)positions.push(p===rightPosition?q.correctIndex:other[k++]);
+ return positions;
+}
+function renderQuestion(){
+ if(index>=round.length){finishRound();return;}
+ locked=false;const q=round[index];
+ $('phase-tag').textContent=phase==='topic'?'НОВАЯ ТЕМА':phase==='review'?'ОБЩАЯ ОЧЕРЕДЬ ОШИБОК':'ПОВТОРЕНИЕ ОШИБОК';
+ $('question-count').textContent=`Вопрос ${index+1} из ${round.length}`;$('question-total').textContent=round.length;
+ $('fill').style.width=(index/round.length*100)+'%';$('question').textContent=q.question;
+ $('next').classList.add('hidden');$('feedback').classList.add('hidden');
+ shownOptions=optionOrdering(q);const area=$('answers');area.replaceChildren();
+ shownOptions.forEach((original,p)=>{
+  const btn=document.createElement('button');btn.type='button';btn.className='answer';
+  const symbol=document.createElement('strong');symbol.textContent='АБВГ'[p];
+  const txt=document.createElement('span');txt.textContent=q.options[original];btn.append(symbol,txt);
+  btn.addEventListener('click',()=>chooseAnswer(original));area.append(btn);
+ });setStats();
+}
+function setStats(){
+ $('coins').textContent=earnedThisRound;$('streak').textContent=streak;
+ $('hits').textContent=answers.filter(a=>a.correct).length;
+}
+function chooseAnswer(chosen){
+ if(locked)return;locked=true;const q=round[index],correct=chosen===q.correctIndex;let gained=0;
+ if(correct){streak++;bestStreak=Math.max(bestStreak,streak);
+  if(phase==='topic'){gained+=giveQuestionCoin(q);if(streak%3===0)gained+=giveComboCoin(streak);}
+  else if(phase==='retry')resolveMistake(q);
+ }else{streak=0;if(phase==='topic'){recordMistake(q);if(!recentWrongIds.includes(q.id))recentWrongIds.push(q.id);}}
+ earnedThisRound+=gained;
+ const answer={id:q.id,question:q.question,options:q.options.slice(),correctIndex:q.correctIndex,chosenIndex:chosen,correct,explanation:q.explanation,topicId:q.topicId,topic:q.topic};
+ answers.push(answer);
+ if(phase==='review'){const active=profile.activeReview;
+  if(active){active.answers.push(answer);save();}}
+ Array.from($('answers').children).forEach((btn,p)=>{btn.disabled=true;if(shownOptions[p]===chosen)btn.classList.add(correct?'correct':'wrong');});
+ const fb=$('feedback');fb.replaceChildren();const h=document.createElement('span');h.className='notice-head';h.textContent=correct?'Верно! ✨':'Пока неверно';fb.append(h);
+ const extra=document.createElement('p');
+ extra.textContent=correct?(phase==='topic'?(gained?`🪙 +${gained} монет. `:'Сегодня монета за этот вопрос уже получена. '):'⭐ Ошибка исправлена! ')+q.explanation:
+  'В конце раунда ты увидишь правильный ответ и объяснение.';
+ fb.append(extra);fb.classList.remove('hidden');
+ $('next').textContent=index===round.length-1?'Завершить раунд →':'Следующий вопрос →';$('next').classList.remove('hidden');setStats();updateHeader();
+}
+function next(){if(!locked)return;index++;if(index>=round.length)finishRound();else renderQuestion();}
+function recordSession(){
+ const correct=answers.filter(a=>a.correct).length;
+ profile.sessions.push({id:sessionId||`${phase}:${Date.now()}`,mode:phase,topicId:phase==='topic'?topicId:'mixed',topic:phase==='topic'?title:'Работа над ошибками',date:now(),correct,total:answers.length,coinsEarned:earnedThisRound,bestStreak,answers:answers.map(a=>({...a}))});
+ if(phase==='topic'){const t=profile.topics[topicId]||{title,plays:0,best:0};t.plays++;t.best=Math.max(t.best,correct);t.lastAt=now();profile.topics[topicId]=t;}
+ save();
+}
+function finishReview(){
+ const active=profile.activeReview;if(!active)return;
+ const response=new Map(active.answers.map(a=>[a.id,a]));const removed=new Set(active.ids);
+ const remaining=profile.errorQueue.filter(q=>!removed.has(q.id));
+ const failed=[];
+ for(const id of active.ids){const a=response.get(id),q=active.items.find(x=>x.id===id);if(!q)continue;
+  if(a&&a.correct){if(profile.mistakes[id])profile.mistakes[id]={...profile.mistakes[id],pending:false,lastCorrected:now(),corrections:(profile.mistakes[id].corrections||0)+1};}
+  else {failed.push(q);const m=profile.mistakes[id]||{};profile.mistakes[id]={...m,...q,pending:true,errors:(m.errors||0)+(a?1:0),lastMistake:now()};}
+ }
+ profile.errorQueue=[...remaining,...failed];
+ phase='review';answers=active.answers.map(a=>({...a}));round=active.items;
+ sessionId=active.id;earnedThisRound=0;recordSession();profile.activeReview=null;save();showResults();
+}
+function finishRound(){
+ if(phase==='review')finishReview();
+ else{recordSession();showResults();}
+}
+function showResults(){
+ const correct=answers.filter(a=>a.correct).length,total=answers.length,ratio=total?correct/total:0;
+ let medal,rank,stars,msg;
+ if(ratio>=.9){medal='🏆';rank='Золотой исследователь';stars='★★★';msg='Отличный результат!';}
+ else if(ratio>=.7){medal='🥈';rank='Серебряный исследователь';stars='★★☆';msg='Хороший результат!';}
+ else{medal='🥉';rank='Начинающий исследователь';stars='★☆☆';msg='Разбери ошибки и попробуй ещё раз.';}
+ $('medal').textContent=medal;$('rank').textContent=rank;$('stars').textContent=stars;$('outcome').textContent=msg;
+ $('final-correct').textContent=`${correct} / ${total}`;$('final-coins').textContent=earnedThisRound;
+ $('final-streak').textContent=phase==='review'?`Верные ответы удалены из очереди, неверные перенесены в конец. В очереди: ${profile.errorQueue.length}.`:`Лучшая серия: ${bestStreak} подряд.`;
+ const oral=$('oral-list');oral.replaceChildren();
+ if(phase==='topic'){(content.oral_questions||[]).forEach(t=>{const li=document.createElement('li');li.textContent=t;oral.append(li);});}
+ $('oral-block').classList.toggle('hidden',!oral.children.length);
+ const wrong=answers.filter(a=>!a.correct);$('mistakes-list').replaceChildren();
+ for(const a of wrong){const li=document.createElement('li'),h=document.createElement('strong'),p=document.createElement('p');h.textContent='❌ '+a.question;p.textContent=`Твой ответ: «${a.options[a.chosenIndex]}». Правильный: «${a.options[a.correctIndex]}». ${a.explanation}`;li.append(h,p);$('mistakes-list').append(li);}
+ $('mistakes-block').classList.toggle('hidden',!wrong.length);
+ $('retry').classList.toggle('hidden',phase!=='topic'||!recentWrongIds.length);
+ $('retry').textContent=`Повторить ошибки (${recentWrongIds.length}) →`;
+ $('retry-status').textContent=phase==='review'?`В очереди осталось ${profile.errorQueue.length} вопросов. Следующий повтор возьмёт самые старые.`:
+ wrong.length?`Ошибок в этом раунде: ${wrong.length}.`:'Без ошибок! Все вопросы решены правильно.';
+ const list=$('review-list');list.replaceChildren();for(const a of answers){const li=document.createElement('li'),h=document.createElement('strong'),p=document.createElement('p');h.textContent=(a.correct?'✅ ':'❌ ')+a.question;p.textContent=a.correct?a.explanation:`Правильный ответ: «${a.options[a.correctIndex]}». ${a.explanation}`;li.append(h,p);list.append(li);}
+ $('confetti').replaceChildren();if(ratio>=.7&&!matchMedia('(prefers-reduced-motion: reduce)').matches){for(let i=0;i<20;i++){const dot=document.createElement('i');dot.style.left=(rand(100))+'%';dot.style.animationDelay=(i%8*.12)+'s';$('confetti').append(dot);}}
+ updateHeader();view('result');
+}
+function exportProgress(){
+ save();const blob=new Blob([JSON.stringify(profile,null,2)],{type:'application/json'});
+ const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='quiz_progress_'+today()+'.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),6000);
+}
+async function importProgress(event){const f=event.target.files?.[0];if(!f)return;
+ try{const data=JSON.parse(await f.text());if(data.schemaVersion!==1||!Array.isArray(data.sessions)||!data.mistakes||!Array.isArray(data.awards)||!Number.isSafeInteger(data.balance)||data.balance<0||!Number.isSafeInteger(data.totalEarned)||data.totalEarned<0)throw Error('неверный формат файла');
+  if(!confirm('Заменить текущий прогресс данными из файла? Сначала можно скачать резервную копию.'))return;
+  profile={...freshProfile(),...data};sanitizeProfile();save();updateHeader();home();alert('Прогресс восстановлен.');
+ }catch(e){alert('Не удалось восстановить прогресс: '+e.message);}finally{event.target.value='';}
+}
+async function copyResult(){
+ const summary=`${phase==='topic'?title:'Работа над ошибками'}\nПравильно: ${answers.filter(a=>a.correct).length} из ${answers.length}\nОчередь ошибок: ${profile.errorQueue.length}\nБаланс: ${profile.balance}`;
+ try{await navigator.clipboard.writeText(summary);$('copy').textContent='Скопировано ✓';}catch(e){prompt('Скопируй результат:',summary);}
+}
+function showContent(){
+ $('topic-title').textContent=title;$('intro-phrase').textContent=content.description||'Выбирай правильные ответы и собирай монеты!';
+ $('topic-count').textContent=questions.length+' вопросов';$('question-total').textContent=questions.length;
+ $('brand-topic').textContent=content.short_title||'Кругозор';document.title='Квест — '+title;
+ const src=Array.isArray(content.sources)?content.sources:[];
+ const foot=$('sources');foot.replaceChildren();foot.append(document.createTextNode(src.length?'Источники: ':'Вопросы загружены.'));
+ for(const s of src){if(!s || typeof s.url!=='string' || !/^https:\/\//.test(s.url))continue;
+  const a=document.createElement('a');a.textContent=s.name||s.url;a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';foot.append(document.createTextNode(' · '),a);
+ }
+ $('start').disabled=false;$('start').textContent='Начать игру →';
+}
+async function load(){
+ storageStatus();updateHeader();
+ try{
+  const res=await fetch('./current.json?fresh='+Date.now(),{cache:'no-store'});
+  if(!res.ok)throw Error(`HTTP ${res.status}`);
+  content=await res.json();if(!content||!Array.isArray(content.questions)||!content.questions.length)throw Error('нет вопросов');
+  topicId=String(content.slug||'current');title=String(content.title||'Проверка знаний');
+  questions=content.questions.map((q,i)=>shape(q,`${topicId}:q${i+1}`,topicId,title));
+  if(!questions.every(valid))throw Error('неправильный формат вопросов');
+  if(new Set(questions.map(q=>q.id)).size!==questions.length)throw Error('повторяются ID вопросов');
+  showContent();
+ }catch(e){
+  $('topic-title').textContent='Не удалось загрузить игру';
+  $('intro-phrase').textContent='Проверь, что index.html и current.json загружены в корень репозитория. '+e.message;
+  $('intro-phrase').classList.add('error-loading');$('start').textContent='Вопросы не загрузились';
+ }
+}
+$('start').addEventListener('click',startTopic);
+$('start-review').addEventListener('click',startReview);
+$('resume-review').addEventListener('click',resumeReview);
+$('next').addEventListener('click',next);
+$('again').addEventListener('click',home);
+$('retry').addEventListener('click',retryRecent);
+$('copy').addEventListener('click',copyResult);
+$('download-history').addEventListener('click',exportProgress);
+$('download-history-result').addEventListener('click',exportProgress);
+$('restore-history').addEventListener('change',importProgress);
+load();
+})();
+
+</script>
+</body></html>
